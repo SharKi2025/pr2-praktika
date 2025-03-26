@@ -25,6 +25,19 @@ class Calc
                 case '-':
                     result = num1 - num2;
                     break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '^':
+                    result = Math.Pow(num1, num2);
+                    break;
+                case '/':
+                    if (num2 == 0)
+                    {
+                        throw new DivideByZeroException("Нельзя делить на 0");
+                    }
+                    result = num1 / num2;
+                    break;
                 default:
                     throw new InvalidOperationException("Неверная операция");
             }
